@@ -1,9 +1,8 @@
-// Hamming code
+// Hamming Code Encoder
+// File: hammingCodeEncoder.v
+// Team: Capstone Project ECC
 
-// hammingCode.v
-
-
-module hammingCode(clk, reset, dataIn, lengthIn, dataOut, lengthOut);
+module hammingCodeEncoder(clk, reset, dataIn, lengthIn, dataOut, lengthOut);
 
 input clk;
 input reset;
@@ -39,18 +38,18 @@ always @(posedge clk)
 			j = 0;
 			
 			while(counter < lengthOut) begin
-				if(i = counter) begin
+				if(i == counter) begin
 					dataOut[counter -1] = 0;
 					i = i * 2;
 				end
 				else begin
 					dataOut[counter-1] = dataIn[j];
-					j++;
+					j = j + 1;
 				end
-				counter ++;
+				counter = counter + 1;
 			end
 		
-		
+			
 		
 		
 		end
